@@ -1,19 +1,19 @@
 from dotenv import load_dotenv
 from langchain.agents import create_agent
 from langchain_groq import ChatGroq
-from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain_tavily import TavilySearch
 
 # Load environment variables
 load_dotenv()
 
 # Initialize LLM (Groq)
 model = ChatGroq(
-    model="llama3-70b-8192"
+    model="llama-3.3-70b-versatile"
 )
 
 # Define Tool
 tools = [
-    TavilySearchResults()
+    TavilySearch()
 ]
 
 # Create Agent
